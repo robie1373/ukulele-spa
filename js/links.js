@@ -1,14 +1,14 @@
 import React from 'react';
 
-function genLink(props) {
-  const linkObj = props;
-  return <a href={linkObj.link}>{linkObj.linktext}</a>
+function ListItem(props) {
+  const lo = props.listObj;
+  return <li><a href={lo.link}>{lo.linktext}</a></li>;
 }
 
 function genListOfLinks(props) {
   const links = props.Items;
   const listItems = links.map((link) =>
-    <li key={link.id}>{genLink(link)}</li>
+    <ListItem key={link.id} listObj={link} />
   );
   return <ul>{listItems}</ul>;
 }
