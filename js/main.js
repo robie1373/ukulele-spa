@@ -3,7 +3,7 @@ import ReactDom from 'react-dom';
 import ToDoList from './todo';
 import ChordProgressionList from './chordprogressions';
 import SongBook from './songbook';
-import LinksList from './links';
+import LinksSection from './links';
 import UnderlayList from './underlay';
 import ChaseSongList from './chasesongs';
 
@@ -16,7 +16,7 @@ ReactDom.render(<ChordProgressionList />,
 ReactDom.render(<SongBook />,
   document.getElementById('songbook'));
 
-ReactDom.render(<LinksList />,
+ReactDom.render(<LinksSection />,
   document.getElementById('linklist'));
 
 ReactDom.render(<UnderlayList />,

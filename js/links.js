@@ -1,12 +1,23 @@
 import React from 'react';
 
-class LinksList extends React.Component {
+function genLink(props) {
+  const linkObj = props;
+  return <a href={linkObj.link}>{linkObj.linktext}</a>
+}
+
+function genListOfLinks(props) {
+  const links = props.Items;
+  const listItems = links.map((link) =>
+    <li key={link.id}>{genLink(link)}</li>
+  );
+  return <ul>{listItems}</ul>;
+}
+
+class LinksSection extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {links: [{"link": "https://cnn.com", "linktext": "like news"}]};
+    this.state = {Items: [{"link": "#", "linktext": "Home"}]};
   }
-
-
 
   componentDidMount() {
     function handleErrors(response) {
@@ -47,12 +58,11 @@ class LinksList extends React.Component {
 
   }
 
-
   render() {
     return(
-      <section className="section section--alignCentered background--uke">{JSON.stringify(this.state)}</section>
-    )
+      <section className="section background--uke"> {genListOfLinks(this.state)} </section>
+    );
   }
 }
 
-export default LinksList;
+export default LinksSection;
