@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import LinksList from '../js/links';
+import LinksSection from '../js/links';
 
 describe("LinksList Component", () => {
-  let component = shallow(<LinksList />);
+  let component = shallow(<LinksSection />);
 
   it("should contain a single section", () => {
     expect(component.type()).toEqual("section");

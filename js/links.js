@@ -1,4 +1,5 @@
 import React from 'react';
+import NewLinkForm from './linkform';
 
 function ListItem(props) {
   const lo = props.listObj;
@@ -60,7 +61,10 @@ class LinksSection extends React.Component {
 
   render() {
     return(
-      <section className="section background--uke"> {genListOfLinks(this.state)} </section>
+      <section className="section background--uke">
+        <div>{genListOfLinks(this.state)}</div>
+        <div>{NewLinkForm} </div>
+      </section>
     );
   }
 }
