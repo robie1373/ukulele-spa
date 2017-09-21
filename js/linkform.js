@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class NewLinkForm extends React.Component {
   constructor(props) {
     super(props);
@@ -27,7 +26,7 @@ class NewLinkForm extends React.Component {
 
   render() {
     return (
-      <form>
+      <form id='linkForm'>
         <label>
           <input
             name="link"
@@ -41,7 +40,7 @@ class NewLinkForm extends React.Component {
           <input
             name="linktext"
             type="text"
-            placehoder="An example link"
+            placeholder="An example link"
 
             onChange={this.handleInputChange} />
         </label>
@@ -50,7 +49,7 @@ class NewLinkForm extends React.Component {
             name="submit"
             type="submit"
             value="submit"
-            onClick={this.props.submitFunction ? this.props.submitFunction : handleSubmit } />
+            onClick={this.props.submitFunction ? this.props.submitFunction : this.handleSubmit } />
         </label>
       </form>
     );

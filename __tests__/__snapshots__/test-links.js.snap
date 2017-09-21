@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LinksList Component Renders correctly 1`] = `
+<section
+  className="section background--uke"
+>
+  <div>
+    <ul>
+      <li>
+        <a
+          href="#"
+          target="_blank"
+        >
+          Home
+        </a>
+         
+      </li>
+    </ul>
+  </div>
+  <div>
+    <form
+      id="linkForm"
+    >
+      <label>
+        <input
+          name="link"
+          onChange={[Function]}
+          placeholder="https://example.com"
+          type="url"
+          value=""
+        />
+      </label>
+      <label>
+        <input
+          name="linktext"
+          onChange={[Function]}
+          placeholder="An example link"
+          type="text"
+        />
+      </label>
+      <label>
+        <input
+          name="submit"
+          onClick={[Function]}
+          type="submit"
+          value="submit"
+        />
+      </label>
+    </form>
+     
+  </div>
+</section>
+`;

@@ -19,7 +19,7 @@ describe("NewLinkForm Component", () => {
     expect(mockHandleSubmitFn).toHaveBeenCalled();
   });
 
-  it ("Should updte the state of link on change", () => {
+  it ("Should update the state of link on change", () => {
     let component = shallow(<NewLinkForm submitFunction={mockHandleSubmitFn}/>);
     let test_val = 'http://foo.bar';
     component.find({name: 'link'}).simulate('change',

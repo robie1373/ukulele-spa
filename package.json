@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "Ukulele Single Page App",
   "main": "index.js",
+  "jest": {
+    "preset": "react-native",
+    "verbose": false,
+    "collectCoverage": true,
+    "clearMocks": true
+  },
   "scripts": {
     "test": "jest",
     "test-watch": "jest --watch",
@@ -31,6 +37,8 @@
     "babel-preset-react": "^6.24.1",
     "enzyme": "^2.9.1",
     "jest": "^21.0.2",
+    "jest-fetch-mock": "^1.2.1",
+    "react-native": "^0.48.3",
     "react-test-renderer": "^15.6.1",
     "webpack": "^3.5.6"
   }

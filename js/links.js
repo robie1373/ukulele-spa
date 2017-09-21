@@ -1,23 +1,15 @@
 import React from 'react';
 import NewLinkForm from './linkform';
-
-function ListItem(props) {
-  const lo = props.listObj;
-  return <li><a href={lo.link}>{lo.linktext}</a></li>;
-}
-
-function genListOfLinks(props) {
-  const links = props.Items;
-  const listItems = links.map((link) =>
-    <ListItem key={link.id} listObj={link} />
-  );
-  return <ul>{listItems}</ul>;
-}
+import ListOfLinks from './listoflinks';
 
 class LinksSection extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {Items: [{"link": "#", "linktext": "Home"}]};
+    this.state = {Items: [{
+      "link": "#",
+      "linktext": "Home",
+      "id":"00000000-aaaa-1111-bbbb-222222cccccc"
+      }] };
   }
 
   componentDidMount() {
@@ -38,7 +30,7 @@ class LinksSection extends React.Component {
       return response;
     }
 
-    const url = `https://uomlb17ija.execute-api.us-east-1.amazonaws.com/dev/uke`
+    const url = this.props.apiURL ? this.props.apiURL : `https://uomlb17ija.execute-api.us-east-1.amazonaws.com/dev/uke`
 
     fetch(url, {mode: 'cors'})
     .then(handleErrors)
@@ -62,8 +54,8 @@ class LinksSection extends React.Component {
   render() {
     return(
       <section className="section background--uke">
-        <div>{genListOfLinks(this.state)}</div>
-        <div>{NewLinkForm} </div>
+        <div>{< ListOfLinks links={this.state.Items} /> }</div>
+        <div>{<NewLinkForm />} </div>
       </section>
     );
   }
